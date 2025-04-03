@@ -1,4 +1,4 @@
-## Sobre o App Fina Flow
+## Aprofundando em DDD
 Este projeto C# é para fins de aprendizagem utilizando a abordagem de Domain Driven Design.
 <br>
 <br>
