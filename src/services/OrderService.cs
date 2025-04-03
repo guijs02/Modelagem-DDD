@@ -12,7 +12,7 @@ namespace src.services
         {
             if(customer.Address.State == "SP")
             {
-                return order.Total() / 2; // 10% discount for SP region
+                return order.Total() / 2; // 50% discount for SP region
             }
             else if (customer.Address.State == "RJ")
             {

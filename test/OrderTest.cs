@@ -45,11 +45,6 @@ namespace test
 
             Assert.Equal(5, result2); 
            
-            // Given
-        
-            // When
-        
-            // Then
         }
     }
 }
