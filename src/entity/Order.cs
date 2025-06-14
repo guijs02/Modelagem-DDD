@@ -1,9 +1,11 @@
+using Order.Domain.events;
+using Shared.Event;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Domain.entity
+namespace Order.Domain.entity
 {
     public class Order
     {
@@ -50,6 +52,12 @@ namespace Domain.entity
             }
         }
 
+        public void FinishOrder(EventDispatcher eventDispatcher)
+        {
+            var finishedOrderEvent = new FinishedOrderEvent(this);
+            
+            eventDispatcher.Notify(finishedOrderEvent);
+        }
         public decimal Total()
         {
             return _items.Sum(item => item.Total());

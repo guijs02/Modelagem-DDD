@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Domain.entity;
+using Order.Domain.entity;
 using src.services;
 using Xunit;
 
@@ -23,9 +24,10 @@ namespace test
                 new OrderItem(2, 1, 20)
             };
                 
-            var order = new Order(1, customer.Id, items);
+            var order = new Order.Domain.entity.Order(1, customer.Id, items);
 
-            var result = OrderService.ApplyDiscountAccordingToRegionCustomer(customer, order);
+            var result = 
+                    OrderService.ApplyDiscountAccordingToRegionCustomer(customer, order);
 
             Assert.Equal(15, result); 
 
@@ -39,9 +41,10 @@ namespace test
                 new OrderItem(2, 1, 40)
             };
                 
-            var order2 = new Order(1, customer2.Id, items2);
+            var order2 = new Order.Domain.entity.Order(1, customer2.Id, items2);
 
-            var result2 = OrderService.ApplyDiscountAccordingToRegionCustomer(customer2, order2);
+            var result2 = 
+                    OrderService.ApplyDiscountAccordingToRegionCustomer(customer2, order2);
 
             Assert.Equal(5, result2); 
            

@@ -8,7 +8,7 @@ namespace src.services
 {
     public class OrderService
     {
-        public static decimal ApplyDiscountAccordingToRegionCustomer(Customer customer, Order order)
+        public static decimal ApplyDiscountAccordingToRegionCustomer(Customer customer, Order.Domain.entity.Order order)
         {
             if(customer.Address.State == "SP")
             {
